@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const userRouter = require('./routers/user');
 
-app.use('/', userRouter);
+app.use('/users', userRouter);
 
 module.exports = app
