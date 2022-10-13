@@ -1,13 +1,6 @@
-const express = require('express');
-const app = express();
-const { Prisma } = require("@prisma/client")
-const prisma = require('./utils/prisma')
+require('dotenv').config();
 
-const getUsers = async (req, res) => {
-    res.send('This is a flamingo')
-};
-
-app.get("/", getUsers);
+const app = require('./server')
 
 const port = process.env.PORT || 4000;
 
