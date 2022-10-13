@@ -1,8 +1,14 @@
-const app = require('./server.js')
+const express = require('express');
+const app = express();
+const { Prisma } = require("@prisma/client")
+const prisma = require('./utils/prisma')
 
-app.get("/", (req, res) => {
-    res.send("Flamingo 1");
-});
+const getUsers = async (req, res) => {
+    const allUsers = await prisma.user.findMany()
+    res.status(201).json({ users: allUsers });
+};
+
+app.get("/", getUsers);
 
 const port = process.env.PORT || 4000;
 
