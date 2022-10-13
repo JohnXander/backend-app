@@ -1,7 +1,7 @@
 const app = require('./server.js')
 
 app.get("/", (req, res) => {
-    res.send("Flamingo");
+    res.send("Flamingo 1");
 });
 
 const port = process.env.PORT || 4000;
