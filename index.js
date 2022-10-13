@@ -1,10 +1,11 @@
-const express = require("express");
-const app = express();
+const app = require('./server.js')
 
 app.get("/", (req, res) => {
     res.send("Flamingo");
 });
 
-app.listen(process.env.PORT || 4000, () =>
-    console.log("Listening on port 4000")
-);
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+    console.log(`\n Server is running on http://localhost:${port}\n`);
+});
